@@ -5,16 +5,19 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
+// set all these data into utils directory with this names 
+import { API_KEY, APP_ID, AUTH_DOMAIN, MESSAGING_SENDIER_ID, PROJECT_ID, STORAGE_BUCKET } from "../utils";
+
 
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAlzBDrE-LE6uOFjI7wvMgSR9_uWTmL0Zk",
-  authDomain: "react-chatapp-23bab.firebaseapp.com",
-  projectId: "react-chatapp-23bab",
-  storageBucket: "react-chatapp-23bab.appspot.com",
-  messagingSenderId: "280027243223",
-  appId: "1:280027243223:web:3016119121a1620a96c692"
+  apiKey: API_KEY,
+  authDomain: AUTH_DOMAIN,
+  projectId: PROJECT_ID,
+  storageBucket: STORAGE_BUCKET,
+  messagingSenderId: MESSAGING_SENDIER_ID,
+  appId: APP_ID
 };
 
 // Initialize Firebase

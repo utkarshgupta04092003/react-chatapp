@@ -5,6 +5,7 @@ import GoogleSignin from "/assets/google.png";
 import { auth } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [user] = useAuthState(auth);
@@ -23,8 +24,8 @@ const NavBar = () => {
 
   return (
     <nav className="h-[10vh] flex items-center justify-between p-4 bg-gray-800 text-white">
-      <h1 className="text-2xl font-bold">React Chat</h1>
-
+      <div  className="text-2xl font-bold">React ChatApp</div>
+    <Link to={'/'}>Home</Link>
                   {user?.displayName && (
         <div className="ml-4 font-bold text-lg text-gray-300">{user.displayName}</div>
       )}

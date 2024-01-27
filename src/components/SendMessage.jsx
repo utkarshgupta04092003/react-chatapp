@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { useParams } from "react-router-dom";
 
 
 const SendMessage = () => {
 
     const [message, setMessage] = useState("");
+    let {roomid} = useParams();
+    if(roomid == null)
+        roomid = "messages";
+    console.log('roomid from send emssage',roomid);
     const sendMessage = async (event) => {
         event.preventDefault();
         console.log('text', message)
@@ -14,7 +19,7 @@ const SendMessage = () => {
             return;
         }
         const { uid, displayName, photoURL } = auth.currentUser;
-        await addDoc(collection(db, "messages"), {
+        await addDoc(collection(db, roomid), {
             text: message,
             name: displayName,
             avatar: photoURL,
