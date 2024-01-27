@@ -23,7 +23,7 @@ const Welcome = () => {
 
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800">
+    <div className="h-[90vh] flex items-center justify-center bg-gray-100 dark:bg-gray-800">
       <div className="bg-white dark:bg-gray-700 p-8 rounded-md shadow-md w-96">
         <h1 className="text-3xl font-semibold mb-4 text-center text-gray-800 dark:text-white">
           Welcome to ChatApp

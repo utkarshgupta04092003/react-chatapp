@@ -10,36 +10,37 @@ const SendMessage = () => {
         event.preventDefault();
         console.log('text', message)
         if (message.trim() === "") {
-          alert("Enter valid message");
-          return;
+            alert("Enter valid message");
+            return;
         }
         const { uid, displayName, photoURL } = auth.currentUser;
         await addDoc(collection(db, "messages"), {
-          text: message,
-          name: displayName,
-          avatar: photoURL,
-          createdAt: serverTimestamp(),
-          uid,
+            text: message,
+            name: displayName,
+            avatar: photoURL,
+            createdAt: serverTimestamp(),
+            uid,
         });
         setMessage("");
-      };
-      
-  return (
-    <form className="send-message" onSubmit={(event) => sendMessage(event)}>
-      <label htmlFor="messageInput" hidden>
-        Enter Message
-      </label>
-      <input
-        id="messageInput"
-        name="messageInput"
-        type="text"
-        className="form-input__input"
-        placeholder="type message..."
-        value={message}
-        onChange={(e)=>setMessage(e.target.value)}
-      />
-      <button type="submit">Send</button>
-    </form>
-  );
+    };
+
+    return (
+
+        <form className=" h-[10vh]  p-4 bg-white dark:bg-gray-700 flex items-center" onSubmit={(event) => sendMessage(event)}>
+            <input
+                type="text"
+                className="flex-1 p-2 rounded-md border border-gray-300 dark:border-gray-600 focus:outline-none"
+                placeholder="Type your message..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+            />
+            <button
+                className="ml-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            >
+                Send
+            </button>
+        </form>
+
+    );
 };
 export default SendMessage;

@@ -9,10 +9,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 export default function App() {
 
   const [user] = useAuthState(auth);
+  console.log('user', user);
 
   return (
     <div className=' text-red-500'>
-      App .js
 
       <NavBar/>
       {!user ? <Welcome /> : <ChatBox />}
