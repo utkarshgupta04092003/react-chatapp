@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './Navbar'
+import CommunityChatBox from './CommunityChatBox';
 import ChatBox from './ChatBox';
 import Welcome from './Welcome';
 
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <div className=' text-red-500'>
 
-      {!user ? <Welcome /> : <ChatBox />}
+      {!user ? <Welcome /> : <CommunityChatBox />}
     </div>
   )
 }

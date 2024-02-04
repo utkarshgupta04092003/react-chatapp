@@ -1,5 +1,5 @@
 import React from 'react';
-import GoogleSignin from "../../public/assets/google.png";
+import GoogleSignin from "/assets/google.png";
 
 
 

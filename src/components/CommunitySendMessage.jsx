@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { useParams } from "react-router-dom";
 
 
-const SendMessage = () => {
+const CommunitySendMessage = () => {
 
     const [message, setMessage] = useState("");
-    let {roomid} = useParams();
-    if(roomid == null)
-        roomid = "messages";
-    // else 
-    //     roomid = atob(roomid)
+    let roomid = "messages";
+    
     console.log('roomid from send emssage',roomid);
     const sendMessage = async (event) => {
         event.preventDefault();
@@ -51,4 +47,4 @@ const SendMessage = () => {
 
     );
 };
-export default SendMessage;
+export default CommunitySendMessage;
