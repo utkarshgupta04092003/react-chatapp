@@ -36,7 +36,6 @@ const ChatBox = () => {
             limit(50)
         );
         console.log('query called');
-        const fetchedMessages = [];
         const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
             const fetchedMessages = [];
             QuerySnapshot.forEach((doc) => {
@@ -59,7 +58,7 @@ const ChatBox = () => {
         // console.log('fetched ',fetchedMessages);
         
         
-        function roomVerification() {
+        function roomVerification(fetchedMessages) {
             swal('hello');
             swal(`Enter Password for ${roomid.toUpperCase()}`, {
                 content: {

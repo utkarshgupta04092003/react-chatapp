@@ -21,15 +21,16 @@ const SendMessage = () => {
             return;
         }
         const { uid, displayName, photoURL } = auth.currentUser;
+        const msg = message;
+        setMessage("");
         console.log('add docs', roomid)
         await addDoc(collection(db, roomid), {
-            text: message,
+            text: msg,
             name: displayName,
             avatar: photoURL,
             createdAt: serverTimestamp(),
             uid,
         });
-        setMessage("");
     };
 
     return (
